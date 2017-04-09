@@ -1,0 +1,79 @@
+﻿@model DatabaseTest.Models.HistoricalPlaces
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<hr/>
+
+<div class="container profile">
+    <div class="col-md-2">
+        <img src="@Url.Content(Model.Picture)" alt="Place" width="200" height="150">
+        <br/>
+        <br/>
+    </div>
+
+<div class="col-md-10">
+   
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+            <br />
+            <br />
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+            <br/>
+            <br/>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+            
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+            <br />
+            <br />
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+            
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.History)
+            <br />
+            <br />
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.History)
+            <br/>
+            <br/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Architecture)
+            <br />
+            <br />
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Architecture)
+        </dd>
+</dl>
+
+</div>
+
+@Html.ActionLink("Back to List", "Index",null,new { @class = "btn btn-default" })
+</div>

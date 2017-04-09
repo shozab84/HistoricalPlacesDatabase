@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DatabaseTest.Models.HistoricalPlaces>
+
+@{
+    ViewBag.Title = "Historical Places Database";
+}
+
+<div class="container heading-container">
+    <div class="heading">Indian Historical Places Database</div>
+</div>
+<hr/>
+
+
+
+    @Html.ActionLink("Add new Place", "Create", null, new { @class = "btn btn-default" })
+
+<br/>
+<br/>
+
+
+<table class="table">
+    <tr class="table-header">
+        <th class="text-left">
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th class="text-left">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="text-left">
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th class="text-right">
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        
+        <th class="text-center"> Actions </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-left">
+           <img src="@Url.Content(item.Picture)" width="180" height="100" />
+        </td>
+        <td class="text-left">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td class="text-left">
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td class="text-right">
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        
+        <td class="text-center">
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default"}) 
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-default" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default"})
+        </td>
+    </tr>
+}
+
+</table>
